@@ -47,6 +47,7 @@
               <a class="nav-link" href="#">Login/Register</a>
             </li>
           </ul>
+          {{! Search option on top of Nav bar }}
           <form class="d-flex" role="search">
             <input
               class="form-control me-2"
@@ -62,7 +63,8 @@
         </div>
       </div>
     </nav>
-    <div id="container">
+    {{! Search option down below }}
+    <div id="searchContainer">
       <form class="d-flex" role="search">
         <input
           class="form-control me-2"
@@ -72,7 +74,12 @@
         />
         <button class="btn btn-outline-success" type="Find Food">Search</button>
       </form>
-      <img src=".jpg" alt="Food" width="950" height="500" />
+      <img
+        src="./public/image/pizza.jpeg"
+        alt="Pizza"
+        width="950"
+        height="500"
+      />
       <p> or sign In to your account</p>
     </div>
     <footer>

@@ -2,7 +2,7 @@
 
 ## Description
 
-This is an app that allows users to select items and add them to their carts. THis app also can save specfic favriotes foods to a database so you can quick acsess favroited items that can be accesed from your account. This also stores credit card information for quick checkouts. This searches for resturantsear you.
+This is an app that allows users search for fast-food chains near you and view their menu. This app also can save specific favriotes foods to a database so you can acsess those items from favroited items that can be accesed from your account. This also stores credit card information for quick checkouts.
 
 ## Live link
 

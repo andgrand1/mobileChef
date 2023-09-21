@@ -1,0 +1,3 @@
+DROP DATABASE IF EXISTS mobileChef_db;
+
+CREATE DATABASE mobileChef_db;

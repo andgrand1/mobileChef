@@ -12,6 +12,10 @@ const MenuItem = sequelize.define('MenuItem', {
   description: {
     type: Sequelize.TEXT,
   },
+  filename: {
+    type: DataTypes.STRING,
+    allowNull: false,
+  },
   price: {
     type: Sequelize.DECIMAL(10, 2), // Example: 9.99
     allowNull: false,

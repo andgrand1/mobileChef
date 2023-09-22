@@ -35,7 +35,7 @@
               <a class="nav-link active" aria-current="page" href="#">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="./home.handlebars">Home</a>
+              <a class="nav-link" id="home" href="#home">Home</a>
             </li>
             {{! drop list option for resturants }}
             <li class="nav-item dropdown">
@@ -49,16 +49,32 @@
                 Dropdown
               </a>
               <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#mcdonald">McDonald</a></li>
-                <li><a class="dropdown-item" href="#wendy">Wendy</a></li>
-                <li><a class="dropdown-item" href="#burgerking">Burger king</a></li>
+                <li><a
+                    class="dropdown-item"
+                    id="mcdonald"
+                    href="#mcdonald"
+                  >McDonald</a></li>
+                <li><a
+                    class="dropdown-item"
+                    id="
+                wendy"
+                    href="#wendy"
+                  >Wendy</a></li>
+                <li><a
+                    class="dropdown-item"
+                    id="burgerking"
+                    href="#burgerking"
+                  >Burger king</a></li>
               </ul>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#cart">Cart</a>
+              <a class="nav-link" id="cart" href="#cart">Cart</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#login">Login/Register</a>
+              <a class="nav-link" id="login" href="#login">Login/register</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" id="login" href="#logout">Logout</a>
             </li>
           </ul>
           {{! Search option on top of Nav bar }}

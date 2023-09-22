@@ -37,6 +37,10 @@ Restaurant.init(
     restaurant_location: {
       type: DataTypes.STRING,
     },
+    restaurant_hours: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    }
   },
   {
     sequelize,

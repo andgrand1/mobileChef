@@ -31,6 +31,10 @@ Restaurant.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
+    filename: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
     restaurant_description: {
       type: DataTypes.TEXT,
     },

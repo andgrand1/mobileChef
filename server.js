@@ -1,7 +1,6 @@
 const express = require("express");
 const hbs = require("handlebars");
 const app = express();
-
 // ... Other server setup code ...
 
 const { sequelize } = require("./config/connection");

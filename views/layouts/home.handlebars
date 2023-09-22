@@ -35,16 +35,30 @@
               <a class="nav-link active" aria-current="page" href="#">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Home</a>
+              <a class="nav-link" href="./home.handlebars">Home</a>
+            </li>
+            {{! drop list option for resturants }}
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Dropdown
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#mcdonald">McDonald</a></li>
+                <li><a class="dropdown-item" href="#wendy">Wendy</a></li>
+                <li><a class="dropdown-item" href="#burgerking">Burger king</a></li>
+              </ul>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Find</a>
+              <a class="nav-link" href="#cart">Cart</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Cart</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Login/Register</a>
+              <a class="nav-link" href="#login">Login/Register</a>
             </li>
           </ul>
           {{! Search option on top of Nav bar }}
@@ -86,7 +100,7 @@
       <div id="contact">
         <p> Email: mobilechef@gmail.com</p>
         <p> Mobile: 1800-mobile-Chef</p>
-        <p>© 2023 Mobile Chef.</p>
+        <p>© 2023 Mobile Chef</p>
       </div>
     </footer>
   </body>

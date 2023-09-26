@@ -1,11 +1,11 @@
-const Sequelize = require('sequelize');
-const { sequelize } = require('../config/connection');
-
-const User = require('./User');
-const MenuItem = require('./menuItem')
+const Sequelize = require("sequelize");
+const { sequelize } = require("../config/connection");
+const { DataTypes } = require("sequelize");
+const User = require("./User");
+const MenuItem = require("./menuItem");
 
 const Order = sequelize.define(
-  'Order',
+  "Order",
   {
     orderNumber: {
       type: Sequelize.INTEGER,
@@ -20,7 +20,7 @@ const Order = sequelize.define(
     orderStatus: {
       type: Sequelize.STRING,
       allowNull: false,
-      defaultValue: 'pending',
+      defaultValue: "pending",
     },
     deliveryAddress: {
       type: Sequelize.STRING,
@@ -29,8 +29,8 @@ const Order = sequelize.define(
       type: Sequelize.INTEGER,
       allowNull: false,
       references: {
-        model: 'User',
-        key: 'id',
+        model: "User",
+        key: "id",
       },
     },
     filename: {
@@ -44,13 +44,11 @@ const Order = sequelize.define(
 );
 
 // Associations
-Order.belongsTo(User, { foreignKey: 'userId' });
-Order.belongsToMany(MenuItem, { through: 'OrderMenuItems' });
-MenuItem.belongsToMany(Order, { through: 'OrderMenuItems' });
+Order.belongsTo(User, { foreignKey: "userId" });
+Order.belongsToMany(MenuItem, { through: "OrderMenuItems" });
+MenuItem.belongsToMany(Order, { through: "OrderMenuItems" });
 
-
-
-Order.belongsTo(User, { foreignKey: 'userId' });
+Order.belongsTo(User, { foreignKey: "userId" });
 
 Order.prototype.calculateOrderTotal = async function () {
   try {
@@ -70,17 +68,14 @@ Order.prototype.calculateOrderTotal = async function () {
 
     return total; // Return the total order cost
   } catch (error) {
-    console.error('Error calculating order total:', error);
+    console.error("Error calculating order total:", error);
     throw error;
   }
 };
 
-
 Order.prototype.updateOrderStatus = async function (newStatus) {
-
   this.orderStatus = newStatus;
   await this.save();
 };
 
 module.exports = Order;
-

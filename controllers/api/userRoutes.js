@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const { User } = require("../../models/User");
+const User = require("../../models/User");
 const bcrypt = require("bcrypt");
 
 router.post("/", async (req, res) => {
@@ -10,7 +10,7 @@ router.post("/", async (req, res) => {
     });
     req.sessionsave(() => {
       req.session.loggedIn = true;
-      res.status(200).json(signupdata);
+      res.status(200).json("signupdata");
     });
   } catch (err) {
     res.json(err);

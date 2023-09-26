@@ -1,6 +1,6 @@
 const Sequelize = require("sequelize");
 const { sequelize } = require("../config/connection");
-
+const { DataTypes } = require("sequelize");
 const MenuItem = sequelize.define("MenuItem", {
   name: {
     type: Sequelize.STRING,
@@ -14,7 +14,7 @@ const MenuItem = sequelize.define("MenuItem", {
   },
   filename: {
     type: DataTypes.STRING,
-    allowNull: false,
+    allowNull: true,
   },
   price: {
     type: Sequelize.DECIMAL(10, 2), // Example: 9.99

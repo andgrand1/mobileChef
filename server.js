@@ -1,25 +1,32 @@
 const express = require("express");
-const hbs = require("handlebars");
+const exphbs = require("express-handlebars");
+const hbs = exphbs.create({});
 const app = express();
 const session = require("express-session");
+const routes = require("./controllers");
+const path = require("path");
 
 // ... Other server setup code ...
 
 const { sequelize } = require("./config/connection");
-sequelize.sync({ force: true });
+
 app.use(
   session({
     secret: "login secret",
     resave: false,
     saveUninitialized: true,
-    cookie: { secure: true, maxAge: 6 * 60 * 60 * 1000 },
+    cookie: { secure: false, maxAge: 6 * 60 * 60 * 1000 },
   })
 );
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+app.use(express.static(path.join(__dirname, "public")));
 
-const routes = require("./controllers");
-app.use("/", routes);
+app.use(routes);
 
 const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`);
+sequelize.sync({ force: true }).then(() => {
+  app.listen(PORT, () => {
+    console.log(`Server is running on port ${PORT}`);
+  });
 });

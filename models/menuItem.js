@@ -1,7 +1,7 @@
-const Sequelize = require('sequelize');
-const { sequelize } = require('../config/connection');
+const Sequelize = require("sequelize");
+const { sequelize } = require("../config/connection");
 
-const MenuItem = sequelize.define('MenuItem', {
+const MenuItem = sequelize.define("MenuItem", {
   name: {
     type: Sequelize.STRING,
     allowNull: false,

@@ -1,4 +1,3 @@
-
 const Sequelize = require("sequelize");
 require("dotenv").config();
 
@@ -22,4 +21,4 @@ sequelize
     console.error("Unable to connect to the database:", err);
   });
 
-module.exports = sequelize;
+module.exports = { sequelize };

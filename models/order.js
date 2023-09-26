@@ -1,7 +1,7 @@
 const Sequelize = require('sequelize');
 const { sequelize } = require('../config/connection');
 
-const User = require('./User'); 
+const User = require('./User');
 const MenuItem = require('./menuItem')
 
 const Order = sequelize.define(
@@ -33,6 +33,10 @@ const Order = sequelize.define(
         key: 'id',
       },
     },
+    filename: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
   },
   {
     timestamps: true, // Enable timestamps (createdAt and updatedAt)
@@ -46,34 +50,34 @@ MenuItem.belongsToMany(Order, { through: 'OrderMenuItems' });
 
 
 
-Order.belongsTo(User, { foreignKey: 'userId' }); 
+Order.belongsTo(User, { foreignKey: 'userId' });
 
 Order.prototype.calculateOrderTotal = async function () {
-    try {
-      const menuItems = await this.getMenuItems();
-  
-      // Calculate the total order cost by summing up the prices of menu items
-      let total = 0;
-      for (const menuItem of menuItems) {
-        total += menuItem.price; 
-      }
-      
-      // Update the 'orderTotal' property of this order
-      this.orderTotal = total;
-      
-      // Save the updated order
-      await this.save();
-  
-      return total; // Return the total order cost
-    } catch (error) {
-      console.error('Error calculating order total:', error);
-      throw error;
+  try {
+    const menuItems = await this.getMenuItems();
+
+    // Calculate the total order cost by summing up the prices of menu items
+    let total = 0;
+    for (const menuItem of menuItems) {
+      total += menuItem.price;
     }
-  };
-  
+
+    // Update the 'orderTotal' property of this order
+    this.orderTotal = total;
+
+    // Save the updated order
+    await this.save();
+
+    return total; // Return the total order cost
+  } catch (error) {
+    console.error('Error calculating order total:', error);
+    throw error;
+  }
+};
+
 
 Order.prototype.updateOrderStatus = async function (newStatus) {
-  
+
   this.orderStatus = newStatus;
   await this.save();
 };

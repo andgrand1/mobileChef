@@ -3,7 +3,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Mobile Chef</title>
-    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="css/styles.css" />
     <!-- Bootstrap -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
@@ -11,7 +11,7 @@
       integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="./style.css" />
+
   </head>
   <body>
     {{! Nav Bar }}
@@ -108,13 +108,9 @@
         />
         <button class="btn btn-outline-success" type="Find Food">Search</button>
       </form>
-      <img
-        src="./public/image/pizza.jpeg"
-        alt="Pizza"
-        width="950"
-        height="500"
-      />
+      <img src="image/pizza.jpeg" alt="Pizza" width="950" height="500" />
       <p> or sign In to your account</p>
+      {{{body}}}
     </div>
     <footer>
       <div id="contact">
@@ -126,8 +122,8 @@
     <!-- If the user is logged in, load the JS script for when they logout -->
     {{#if login}}
       {{! Linking for js }}
-      <script src="./public/js/cleave.js"></script>
-      <script src="./public/js/cart.js"></script>
+      <script src="js/cleave.js"></script>
+      <script src="js/cart.js"></script>
     {{/if}}
   </body>
 </html>

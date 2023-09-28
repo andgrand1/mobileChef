@@ -25,6 +25,7 @@ body {
 #loginBtn,
 #signupButton {
   background-color: #198754;
+  border-color: #198754;
 }
 /* Cleave Credit Card Form */
 button {

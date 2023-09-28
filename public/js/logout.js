@@ -10,5 +10,8 @@ const logout = async () => {
     alert("Failed to log out.");
   }
 };
-
+const pullcart = async () => {
+  window.location.href = location.href + "cart";
+};
 document.querySelector("#logout").addEventListener("click", logout);
+document.querySelector("#cart").addEventListener("click", pullcart);

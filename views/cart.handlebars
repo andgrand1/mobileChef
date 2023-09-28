@@ -1,10 +1,8 @@
 <main>
-  {{#if login}}
+
   <div class="cart">
-    <image src="images/{{filename}}"></image>
-    <p> {{name}}</p>
-    <p> {{price}}</p>
-    <p> {{orderTotal}}</p>
+    <p id="orderlength"> </p>
+    <p id="orderTotal"> </p>
 
     {{! Checkout payment form }}
     <div>
@@ -19,9 +17,10 @@
           <input class="input-phone" placeholder="Enter US phone number" />
           <input class="input-date" placeholder="Enter date: DD/MM/YYYY" />
         </div>
-        <button type="submit" id = "paymentbtn" class="btn btn-primary">Submit Payment</button>
+        <button type="submit" id="paymentbtn" class="btn btn-primary">Submit
+          Payment</button>
       </form>
     </div>
   </div>
+  <script src="js/cartjs.js"></script>
 </main>
-{{/if}}

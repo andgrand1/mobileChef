@@ -1,8 +1,69 @@
 :root {
-  --primary: #3d5852;
+  --primary: #198754;
   --secondary: #8c2400;
-  --tertiary: #16d9ae;
-  --quatrinary: #d94816;
   --light: #e3e4e3;
   --dark: #182c23;
+}
+body {
+  background-color: #e3e4e3;
+  font-family: sans-serif;
+}
+#searchContainer {
+  margin-top: 50px;
+}
+#pizza {
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+#searchMain,
+#submitLocationMain {
+  z-index: 2;
+  display: flex;
+}
+/* login & out */
+#loginBtn,
+#signupButton {
+  background-color: #198754;
+  border-color: #198754;
+}
+/* Cleave Credit Card Form */
+button {
+  margin-bottom: 15px;
+  width: 100%;
+  height: 24px;
+  outline: none;
+  -webkit-appearance: none;
+  border: 1px solid #e6e6e6;
+  border-radius: 5px;
+  background-color: #fff;
+  font-size: 13px;
+}
+.input-credit-card {
+  margin-bottom: 5px;
+}
+input {
+  display: block;
+  outline: none;
+  -webkit-appearance: none;
+  border: 1px solid #e6e6e6;
+  border-radius: 5px;
+  background-color: #fff;
+  line-height: 30px;
+  vertical-align: middle;
+  height: 33px;
+  width: 100%;
+  font-size: 14px;
+  padding: 0 8px;
+  margin-bottom: 15px;
+}
+
+a,
+a:hover {
+  color: #999;
+}
+
+a {
+  font-size: 14px;
+  margin-top: 20px;
 }

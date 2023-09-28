@@ -18,5 +18,3 @@ paymentBtn.addEventListener("click");
 mcdonaldBtn = addEventListener("click");
 signupButton = addEventListener("click");
 loginBtn = addEventListener("click");
-
-

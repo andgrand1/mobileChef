@@ -9,9 +9,9 @@ router.post("/", async (req, res) => {
       username: req.body.username,
       password: req.body.password,
     });
-    req.sessionsave(() => {
+    req.session.save(() => {
       req.session.loggedIn = true;
-      res.status(200).json("signupdata");
+      res.status(200).json(signupdata);
     });
   } catch (err) {
     res.json(err);
@@ -38,7 +38,7 @@ router.post("/login", async (req, res) => {
       res.status(400).json({ message: "Password did not match your username" });
       return;
     }
-    req.sessionsave(() => {
+    req.session.save(() => {
       req.session.loggedIn = true;
     });
     res.status(200).json({ message: "You are now logged in!" });

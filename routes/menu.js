@@ -19,12 +19,16 @@ router.post("/", async (req, res) => {
 
 // Retrieve a list of menu items
 router.get("/", async (req, res) => {
-  try {
-    const menuItems = await MenuItem.findAll();
-    res.json(menuItems);
-  } catch (error) {
-    console.error("Error retrieving menu items:", error);
-    res.status(500).json({ error: "Failed to retrieve menu items" });
+  if (req.session.loggedIn) {
+    try {
+      const menuItems = await MenuItem.findAll();
+      res.json(menuItems);
+    } catch (error) {
+      console.error("Error retrieving menu items:", error);
+      res.status(500).json({ error: "Failed to retrieve menu items" });
+    }
+  } else {
+    res.render("login");
   }
 });
 

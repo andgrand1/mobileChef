@@ -69,15 +69,16 @@
               </ul>
             </li>
             <li class="nav-item">
-              <a class="nav-link" id="cart" href="#cart">Cart</a>
+              <a class="nav-link" id="cart" href="/cart">Cart</a>
             </li>
             {{#if login}}
               <li class="nav-item">
-                <a class="nav-link" id="logout" href="#home">Logout</a>
+                <a class="nav-link" id="logout" href="/">Logout</a>
               </li>
             {{else}}
               <li class="nav-item">
-                <a class="nav-link" id="login" href="#login">Login/register</a>
+                <a class="nav-link" id="login" href="/login">Login/register</a>
+
               </li>
             {{/if}}
           </ul>
@@ -97,24 +98,6 @@
         </div>
       </div>
     </nav>
-    {{! Search option down below }}
-    <div id="searchContainer">
-      <form class="d-flex" role="search">
-        <input
-          class="form-control me-2"
-          type="search"
-          placeholder="Search Location"
-          aria-label="Search"
-        />
-        <button class="btn btn-outline-success" type="Find Food">Search option coming soon</button>
-      </form>
-      <img
-        src="./public/image/pizza.jpeg"
-        alt="Pizza"
-        width="950"
-        height="500"
-      />
-      <p> <a href = "login"> or sign In to your account</p></a>
             {{{body}}}
     </div>
     <footer>
@@ -131,7 +114,6 @@
       <script src="./public/js/cart.js"></script>
       <script src="./public/js/login.js"></script>
       <script src="./public/js/logout.js"></script>
-
     {{/if}}
   </body>
 </html>

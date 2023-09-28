@@ -47,7 +47,7 @@
                 data-bs-toggle="dropdown"
                 aria-expanded="false"
               >
-                Dropdown
+                Resturants
               </a>
               <ul class="dropdown-menu">
                 <li><a
@@ -73,7 +73,7 @@
             </li>
             {{#if login}}
               <li class="nav-item">
-                <a class="nav-link" id="login" href="#logout">Logout</a>
+                <a class="nav-link" id="logout" href="#home">Logout</a>
               </li>
             {{else}}
               <li class="nav-item">
@@ -106,15 +106,20 @@
           placeholder="Search Location"
           aria-label="Search"
         />
-        <button class="btn btn-outline-success" type="Find Food">Search</button>
+        <button class="btn btn-outline-success" type="Find Food">Search option coming soon</button>
       </form>
-      <img src="image/pizza.jpeg" alt="Pizza" width="950" height="500" />
-      <p> or sign In to your account</p>
-      {{{body}}}
+      <img
+        src="./public/image/pizza.jpeg"
+        alt="Pizza"
+        width="950"
+        height="500"
+      />
+      <p> <a href = "login"> or sign In to your account</p></a>
+            {{{body}}}
     </div>
     <footer>
       <div id="contact">
-        <p> Email: mobilechef@gmail.com</p>
+        <p><a href="mobilechef@gmail.com"> Email: mobilechef@gmail.com</p></a>
         <p> Mobile: 1800-mobile-Chef</p>
         <p>© 2023 Mobile Chef</p>
       </div>
@@ -122,8 +127,11 @@
     <!-- If the user is logged in, load the JS script for when they logout -->
     {{#if login}}
       {{! Linking for js }}
-      <script src="js/cleave.js"></script>
-      <script src="js/cart.js"></script>
+      <script src="./public/js/cleave.js"></script>
+      <script src="./public/js/cart.js"></script>
+      <script src="./public/js/login.js"></script>
+      <script src="./public/js/logout.js"></script>
+
     {{/if}}
   </body>
 </html>

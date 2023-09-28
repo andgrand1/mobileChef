@@ -1,27 +1,48 @@
-const { Order, User, MenuItem } = require('../models');
+const { Order, User } = require("../models");
 
-const createSampleOrder = async () => {
-    try {
-        const [user, created] = await User.findOrCreate({
-            where: {
-                id: User,
-            },
-            defaults: {
-                username: newUserData,
-                password: newUserData.password,
-            },
-        });
-        sampleOrder = await Order.create({
-            orderTotal: 25.99,
-            orderStatus: 'completed',
-            deliveryAddress: '123 Main St',
-            userId: user.id,
-        });
+const sampleOrder = [
+  {
+    orderNumber: "1",
+    orderTotal: "$40.52",
+    orderStatus: "complete",
+    deliveryAddress: "123 Main St",
+    userId: "1",
+  },
+  {
+    orderNumber: "2",
+    orderTotal: "$12.99",
+    orderStatus: "active",
+    deliveryAddress: "456 Maple Rd",
+    userId: "2",
+  },
+  {
+    orderNumber: "3",
+    orderTotal: "$97.13",
+    orderStatus: "pending payment",
+    deliveryAddress: "789 Hennepin Hill",
+    userId: "3",
+  },
+];
 
-        console.log('sample orders created successfully');
-    } catch (error) {
-        console.error('error creating sample orders:', error);
-    }
-};
+const userData = [
+  {
+    name: "Molly Lolly",
+  },
+  {
+    name: "Tilly Willy",
+  },
+  {
+    name: "Nelly Belly",
+  },
+];
 
-createSampleOrder();
+async function seed() {
+  try {
+    await User.bulkCreate(userData);
+    await Order.bulkCreate(sampleOrder);
+  } catch (error) {
+    console.error("Error seeding sample order:", error);
+  }
+}
+
+seed();

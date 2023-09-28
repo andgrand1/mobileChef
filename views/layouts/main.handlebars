@@ -78,6 +78,7 @@
             {{else}}
               <li class="nav-item">
                 <a class="nav-link" id="login" href="/login">Login/register</a>
+
               </li>
             {{/if}}
           </ul>
@@ -109,11 +110,10 @@
     <!-- If the user is logged in, load the JS script for when they logout -->
     {{#if login}}
       {{! Linking for js }}
-      <script src="js/cleave.js"></script>
-      <script src="js/cart.js"></script>
-      <script src="js/login.js"></script>
-      <script src="js/logout.js"></script>
-
+      <script src="./public/js/cleave.js"></script>
+      <script src="./public/js/cart.js"></script>
+      <script src="./public/js/login.js"></script>
+      <script src="./public/js/logout.js"></script>
     {{/if}}
   </body>
 </html>

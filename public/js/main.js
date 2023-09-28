@@ -1,20 +1,24 @@
-// Mcdonald.handlebars
-var cardLink = document.querySelector(".card-link");
+const orderTotal = JSON.parse(localStorage.getItem("orderTotal")) || [];
+const pricegetter1 = async () => {
+  let price = document.querySelector("#price1").textContent;
+  orderTotal.push(price);
+  console.log(orderTotal);
+  localStorage.setItem("orderTotal", JSON.stringify(orderTotal));
+};
+const pricegetter2 = async () => {
+  let price = document.querySelector("#price2").textContent;
+  orderTotal.push(price);
+  console.log(orderTotal);
+  localStorage.setItem("orderTotal", JSON.stringify(orderTotal));
+};
+const pricegetter3 = async () => {
+  let price = document.querySelector("#price3").textContent;
+  orderTotal.push(price);
+  console.log(orderTotal);
+  localStorage.setItem("orderTotal", JSON.stringify(orderTotal));
+};
+document.querySelector("#addbutton1").addEventListener("click", pricegetter1);
 
-//cart
-var paymentBtn = document.querySelector("#paymentbtn");
+document.querySelector("#addbutton2").addEventListener("click", pricegetter2);
 
-//find.handlebars
-var mcdonaldBtn = document.querySelector("#mcdonaldBtn");
-
-// login.handlebars
-var loginBtn = document.querySelector("#loginBtn");
-var signupButton = document.querySelector("#signupButton");
-
-
-// Add event listener to generate button
-cardLink.addEventListener("click");
-paymentBtn.addEventListener("click");
-mcdonaldBtn = addEventListener("click");
-signupButton = addEventListener("click");
-loginBtn = addEventListener("click");
+document.querySelector("#addbutton3").addEventListener("click", pricegetter3);

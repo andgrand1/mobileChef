@@ -69,18 +69,18 @@
             </li>
             <li class="nav-item">
 
-              <a class="nav-link" id="cart" href="#cart">Cart</a>
+              <a class="nav-link" id="cart" >Cart</a>
             </li>
-            {{#if login}}
+
               <li class="nav-item">
                 <a class="nav-link" id="logout" href="#home">Logout</a>
               </li>
-            {{else}}
+
               <li class="nav-item">
                 <a class="nav-link" id="login" href="#login">Login/register</a>
 
               </li>
-            {{/if}}
+
           </ul>
           {{! Search option on top of Nav bar }}
           <form class="d-flex" role="search">
@@ -132,13 +132,8 @@
       </div>
     </footer>
     <!-- If the user is logged in, load the JS script for when they logout -->
-    {{#if login}}
       {{! Linking for js }}
-      <script src="./public/js/cleave.js"></script>
-      <script src="./public/js/cart.js"></script>
-      <script src="./public/js/login.js"></script>
-      <script src="./public/js/logout.js"></script>
-
-    {{/if}}
+      <script src="js/logout.js"></script>
+      <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
   </body>
 </html>

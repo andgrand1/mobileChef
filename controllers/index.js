@@ -5,7 +5,7 @@ router.use("/api", apiRoutes);
 router.use("/routes", Routes);
 router.get("/", (req, res) => {
   if (req.session.loggedIn) {
-    res.render("find");
+    res.render("mcdonald");
   } else {
     res.render("login");
   }
@@ -15,6 +15,9 @@ router.get("/login", (req, res) => {
 });
 router.get("/cart", (req, res) => {
   res.render("cart");
+});
+router.get("/mcdonalds", (req, res) => {
+  res.render("mcdonald");
 });
 
 module.exports = router;

@@ -4,7 +4,7 @@ const Routes = require("../routes");
 router.use("/api", apiRoutes);
 router.use("/routes", Routes);
 router.get("/", (req, res) => {
-  res.render("home", { title: "Food Delivery App" });
+  res.render("login");
 });
 
 module.exports = router;
